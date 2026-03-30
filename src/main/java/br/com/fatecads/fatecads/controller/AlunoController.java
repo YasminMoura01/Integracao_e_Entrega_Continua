@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import br.com.fatecads.fatecads.entity.Aluno;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+
 
 @Controller
 @RequestMapping("/alunos")
@@ -30,6 +34,14 @@ public class AlunoController {
     @GetMapping("/listar")
     public String listar(Model model) {
         model.addAttribute("alunos", alunoService.findAll());
-        return "alunos/listarAlunos";
+        return "aluno/listarAlunos";
     }
+
+    //metodo para criar um novo aluno e abrir formulario
+    @GetMapping("/criar")
+    public String criarForm(Model model) {
+        model.addAttribute("aluno", new Aluno());
+        return "aluno/formularioAluno";
+    }
+    
 }

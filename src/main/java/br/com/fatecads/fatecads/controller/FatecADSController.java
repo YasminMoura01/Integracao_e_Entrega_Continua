@@ -8,7 +8,7 @@ import org.springframework.ui.Model;
 
 @Controller
 @RequestMapping("/fatecads")
-public class FatecADSContriller {
+public class FatecADSController {
     @GetMapping
     public String index(Model model) {
         return "index";
