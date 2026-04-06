@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.com.fatecads.fatecads.service.AlunoService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import br.com.fatecads.fatecads.entity.Aluno;
@@ -44,4 +45,18 @@ public class AlunoController {
         return "aluno/formularioAluno";
     }
     
+    //metodo para excluir um aluno do banco de dados
+    @GetMapping("/excluir/{id}")
+    public String excluir(@PathVariable Integer id) {
+        alunoService.deleteById(id);
+        return "redirect:/alunos/listar";
+    }
+
+    //metodo para editar um aluno do banco de dados
+    @GetMapping("/editar/{id}")
+    public String editarForm(@PathVariable Integer id, Model model) {
+        Aluno aluno = alunoService.findById(id);
+        model.addAttribute("aluno", aluno);
+        return "aluno/formularioAluno"; 
+    }
 }

@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 
 @Controller
-@RequestMapping("/fatecads")
 public class FatecADSController {
-    @GetMapping
+
+    @GetMapping({"/", "/fatecads"})
     public String index(Model model) {
         return "index";
     }

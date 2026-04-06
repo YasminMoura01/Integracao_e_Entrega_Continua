@@ -24,4 +24,14 @@ public class AlunoService {
     public List<Aluno> findAll() {
         return alunoRepository.findAll();
     }
+
+    //metodo para excluir um aluno do banco de dados
+    public void deleteById(Integer id) {
+        alunoRepository.deleteById(id);
+    }
+
+    //Metodo para buscar um aluno pelo id
+    public Aluno findById(Integer id) {
+        return alunoRepository.findById(id).orElse(null);
+    }
 }
