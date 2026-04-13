@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Professores</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="panel">
+            <div class="section-title">
+                <h1>Listagem de Professores</h1>
+                <div class="button-row">
+                    <a class="pill-link" href="/professores/criar">Criar Novo Professor</a>
+                    <a class="button-secondary" href="/">Voltar</a>
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <tr>
+                        <th>Nome do Professor</th>
+                        <th>Telefone</th>
+                        <th>Graduação</th>
+                        <th>RM</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tr th:each="professor : ${professores}">
+                        <td th:text="${professor.nomeProfessor}">*</td>
+                        <td th:text="${professor.telefoneProfessor}">*</td>
+                        <td th:text="${professor.graduacaoProfessor}">*</td>
+                        <td th:text="${professor.rmProfessor}">*</td>
+                        <td class="actions">
+                            <a th:href="@{/professores/editar/{id}(id=${professor.idProfessor})}">Editar</a>
+                            <a th:href="@{/professores/excluir/{id}(id=${professor.idProfessor})}">Excluir</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

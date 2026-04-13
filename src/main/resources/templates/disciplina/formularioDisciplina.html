@@ -3,37 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Cursos</title>
+    <title>Cadastro de Disciplinas</title>
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
     <main class="page-shell">
         <section class="panel">
             <div class="section-title">
-                <h1>Cadastro de Cursos</h1>
+                <h1>Cadastro de Disciplinas</h1>
             </div>
 
-            <form class="form-card" th:action="@{/cursos/salvar}" method="post" th:object="${curso}">
-                <input type="hidden" th:field="*{id}">
+            <form class="form-card" th:action="@{/disciplinas/salvar}" method="post" th:object="${disciplina}">
+                <input type="hidden" th:field="*{idDisciplina}">
 
                 <div class="field-grid">
                     <div class="field">
-                        <label>Nome do Curso</label>
-                        <input type="text" th:field="*{nome}">
+                        <label>Nome da Disciplina</label>
+                        <input type="text" th:field="*{nomeDisciplina}">
                     </div>
                     <div class="field">
-                        <label>Período</label>
-                        <input type="text" th:field="*{periodo}">
+                        <label>Sigla</label>
+                        <input type="text" th:field="*{siglaDisciplina}">
                     </div>
                     <div class="field">
                         <label>Carga Horária</label>
-                        <input type="number" th:field="*{cargaHoraria}">
+                        <input type="number" th:field="*{cargaHorariaDisciplina}">
                     </div>
                 </div>
 
                 <div class="button-row">
                     <input type="submit" value="Salvar">
-                    <a class="button-secondary" href="/cursos/listar">Cancelar</a>
+                    <a class="button-secondary" href="/disciplinas/listar">Cancelar</a>
                 </div>
             </form>
         </section>

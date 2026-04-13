@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem de Cursos</title>
+    <title>Listagem de Disciplinas</title>
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
     <main class="page-shell">
         <section class="panel">
             <div class="section-title">
-                <h1>Listagem de Cursos</h1>
+                <h1>Listagem de Disciplinas</h1>
                 <div class="button-row">
-                    <a class="pill-link" href="/cursos/criar">Criar Novo Curso</a>
+                    <a class="pill-link" href="/disciplinas/criar">Criar Nova Disciplina</a>
                     <a class="button-secondary" href="/">Voltar</a>
                 </div>
             </div>
@@ -20,18 +20,18 @@
             <div class="table-wrap">
                 <table>
                     <tr>
-                        <th>Nome do Curso</th>
-                        <th>Período</th>
+                        <th>Nome da Disciplina</th>
+                        <th>Sigla</th>
                         <th>Carga Horária</th>
                         <th>Ações</th>
                     </tr>
-                    <tr th:each="curso : ${cursos}">
-                        <td th:text="${curso.nome}">*</td>
-                        <td th:text="${curso.periodo}">*</td>
-                        <td th:text="${curso.cargaHoraria}">*</td>
+                    <tr th:each="disciplina : ${disciplinas}">
+                        <td th:text="${disciplina.nomeDisciplina}">*</td>
+                        <td th:text="${disciplina.siglaDisciplina}">*</td>
+                        <td th:text="${disciplina.cargaHorariaDisciplina}">*</td>
                         <td class="actions">
-                            <a th:href="@{/cursos/editar/{id}(id=${curso.id})}">Editar</a>
-                            <a th:href="@{/cursos/excluir/{id}(id=${curso.id})}">Excluir</a>
+                            <a th:href="@{/disciplinas/editar/{id}(id=${disciplina.idDisciplina})}">Editar</a>
+                            <a th:href="@{/disciplinas/excluir/{id}(id=${disciplina.idDisciplina})}">Excluir</a>
                         </td>
                     </tr>
                 </table>

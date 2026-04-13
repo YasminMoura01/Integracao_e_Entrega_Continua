@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema FatecADS</title>
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <h1 style="text-align: center;">Bem vindo ao Sistema FatecADS!</h1>
-    <h3 style="text-align: center;"><a href="/alunos/listar">Gerenciar Alunos</a></h3>
-    <h3 style="text-align: center;"><a href="/cursos/listar">Gerenciar Cursos</a></h3>
+    <main class="page-shell">
+        <section class="hero">
+            <h1>Bem vindo ao Sistema FatecADS!</h1>
+            <div class="nav-grid">
+                <a class="nav-card" href="/alunos/listar"><strong>Gerenciar Alunos</strong></a>
+                <a class="nav-card" href="/professores/listar"><strong>Gerenciar Professores</strong></a>
+                <a class="nav-card" href="/disciplinas/listar"><strong>Gerenciar Disciplinas</strong></a>
+                <a class="nav-card" href="/cursos/listar"><strong>Gerenciar Cursos</strong></a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

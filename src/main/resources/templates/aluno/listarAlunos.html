@@ -4,34 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem de Alunos</title>
+    <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
-    <h1 style="text-align: center;">Listagem de Alunos</h1>
-    <h3 style="text-align: center;">
-        <a href="/alunos/criar">Criar Novo Aluno</a>
-    </h3>
-    <table align="center" border="1">
-        <tr>
-            <th>Nome do Aluno</th>
-            <th>Email</th>
-            <th>Telefone</th>
-            <th>Endereço</th>
-            <th>CPF</th>
-            <th>RA</th>
-            <th colspan="2">Ações</th>
-        </tr>
-        <tr th:each="aluno : ${alunos}">
-            <td th:text="${aluno.nomeAluno}">*</td>
-            <td th:text="${aluno.emailAluno}">*</td>
-            <td th:text="${aluno.telefoneAluno}">*</td>
-            <td th:text="${aluno.enderecoAluno}">*</td>
-            <td th:text="${aluno.cpfAluno}">*</td>
-            <td th:text="${aluno.raAluno}">*</td>
-            <td>
-                <a th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">Editar</a> |
-                <a th:href="@{/alunos/excluir/{id}(id=${aluno.idAluno})}">Excluir</a>
-            </td>
-        </tr>
-    </table>
+    <main class="page-shell">
+        <section class="panel">
+            <div class="section-title">
+                <h1>Listagem de Alunos</h1>
+                <div class="button-row">
+                    <a class="pill-link" href="/alunos/criar">Criar Novo Aluno</a>
+                    <a class="button-secondary" href="/">Voltar</a>
+                </div>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <tr>
+                        <th>Nome do Aluno</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
+                        <th>CPF</th>
+                        <th>RA</th>
+                        <th>Ações</th>
+                    </tr>
+                    <tr th:each="aluno : ${alunos}">
+                        <td th:text="${aluno.nomeAluno}">*</td>
+                        <td th:text="${aluno.emailAluno}">*</td>
+                        <td th:text="${aluno.telefoneAluno}">*</td>
+                        <td th:text="${aluno.enderecoAluno}">*</td>
+                        <td th:text="${aluno.cpfAluno}">*</td>
+                        <td th:text="${aluno.raAluno}">*</td>
+                        <td class="actions">
+                            <a th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">Editar</a>
+                            <a th:href="@{/alunos/excluir/{id}(id=${aluno.idAluno})}">Excluir</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

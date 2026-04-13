@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Professores</title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+    <main class="page-shell">
+        <section class="panel">
+            <div class="section-title">
+                <h1>Cadastro de Professores</h1>
+            </div>
+
+            <form class="form-card" th:action="@{/professores/salvar}" method="post" th:object="${professor}">
+                <input type="hidden" th:field="*{idProfessor}">
+
+                <div class="field-grid">
+                    <div class="field">
+                        <label>Nome do Professor</label>
+                        <input type="text" th:field="*{nomeProfessor}">
+                    </div>
+                    <div class="field">
+                        <label>Telefone</label>
+                        <input type="text" th:field="*{telefoneProfessor}">
+                    </div>
+                    <div class="field">
+                        <label>Graduação</label>
+                        <input type="text" th:field="*{graduacaoProfessor}">
+                    </div>
+                    <div class="field">
+                        <label>RM</label>
+                        <input type="text" th:field="*{rmProfessor}">
+                    </div>
+                </div>
+
+                <div class="button-row">
+                    <input type="submit" value="Salvar">
+                    <a class="button-secondary" href="/professores/listar">Cancelar</a>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
